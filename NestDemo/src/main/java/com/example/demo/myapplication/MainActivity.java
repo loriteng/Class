@@ -1,5 +1,6 @@
 package com.example.demo.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //設定一個按鈕連到第二頁
+        Button b2 = (Button)super.findViewById(R.id.b2);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent().setClass(MainActivity.this, Main2Activity.class));
+            }
+        });
+
+        //設定一個按鈕可執行上面寫的class MyClick
         Button b1 = (Button)super.findViewById(R.id.b1);
         b1.setOnClickListener(new Myclick());
 
