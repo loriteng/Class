@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //設定一個按鈕連到第二頁
+        //有寫super是指定從父類別開始找，若沒有寫，
+        //就會從自己開始找，找不到才會到父類別找
         Button b2 = (Button)super.findViewById(R.id.b2);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +36,5 @@ public class MainActivity extends AppCompatActivity {
         //設定一個按鈕可執行上面寫的class MyClick
         Button b1 = (Button)super.findViewById(R.id.b1);
         b1.setOnClickListener(new Myclick());
-
     }
 }
